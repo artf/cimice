@@ -33,7 +33,10 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "dev": "WEBPACK_ENV=dev ./node_modules/.bin/webpack-dev-server --progress --colors",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src",
+    "test": "mocha --compilers js:babel-core/register --recursive ./test/*.js",
+    "test:dev": "mocha --compilers js:babel-core/register --recursive -R min -w ./test/*.js",
+    "build": "WEBPACK_ENV=prod && npm run test && webpack && npm run build:doc",
+    "dev": "WEBPACK_ENV=dev ./node_modules/.bin/webpack-dev-server --progress --colors"
   }
 }
