@@ -6,9 +6,6 @@
   "main": "dist/cimice.min.js",
   "homepage": "https://github.com/artf/cimice#readme",
   "license": "MIT",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/artf/cimice.git"
@@ -34,5 +31,9 @@
     "sinon": "^1.17.3",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
+  },
+  "scripts": {
+    "dev": "WEBPACK_ENV=dev ./node_modules/.bin/webpack-dev-server --progress --colors",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
