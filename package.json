@@ -29,6 +29,7 @@
     "documentation": "^4.0.0-beta2",
     "eslint": "^2.7.0",
     "istanbul": "^1.0.0-alpha",
+    "jsdom": "^8.3.0",
     "mocha": "^2.4.5",
     "sinon": "^1.17.3",
     "webpack": "^1.12.14",

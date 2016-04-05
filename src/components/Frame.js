@@ -29,8 +29,8 @@ export default class Frame {
     this.scrollY = opts.scrollY || 0;
     this.cursorX = opts.cursorX || 0;
     this.cursorY = opts.cursorY || 0;
-    this.height = opts.height;
-    this.width = opts.width;
+    this.height = opts.height || 0;
+    this.width = opts.width || 0;
     this.ts = opts.ts || 0;
   }
 
