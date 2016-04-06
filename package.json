@@ -43,5 +43,8 @@
     "build:doc": "documentation build src/main.js -o ./docs/README.md -f md",
     "cover": "babel-node ./node_modules/istanbul/lib/cli cover node_modules/.bin/_mocha -- --compilers js:babel-core/register --recursive -R spec ./test/*.js",
     "dev": "WEBPACK_ENV=dev ./node_modules/.bin/webpack-dev-server --progress --colors"
+  },
+  "dependencies": {
+    "js-base64": "^2.1.9"
   }
 }
