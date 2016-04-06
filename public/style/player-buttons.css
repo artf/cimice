@@ -1,0 +1,65 @@
+.commands {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin: 0 auto;
+  width: 100px;
+}
+.commands .btn{
+  background-color: rgba(255,255,255,0.1);
+  text-align: center;
+  line-height: 30px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 30px;
+  margin: 8px auto;
+  width: 30px;
+  border-radius: 100%;
+  box-shadow: 0 1px 1px rgba(0,0,0, 0.1), 0 1px 4px rgba(0,0,0, 0.2);
+  position: relative;
+  transform: translate3d(0px, 0px, 0xp);
+  transition: border-width 0.3s, box-shadow 0.3s;
+  padding: 0;
+  outline: none;
+}
+#player-commands .btn {
+  padding: 0 9px;
+  margin: 8px 10px;
+  border: none;
+  float: left;
+}
+#player-commands button:active .icon.play, #play.btn.active .icon{
+  transform: translate3d(0px, 0px, 0xp);
+  transition: border-color 0.3s;
+  border-left: 12px solid #4fbcfd;
+}
+#player-commands button:active .icon.stop{
+  background-color: #4fbcfd;
+}
+#rec-commands .btn {
+  background-color: #f04242;
+  border: 11px solid #fff;
+}
+.btn.active{
+  box-shadow: 0 0 1px rgba(0,0,0, 0.1), 0 0 2px rgba(0,0,0, 0.2);
+}
+#rec-commands #rec.btn.active {
+  border-width: 3px;
+}
+.icon.stop {
+  background-color: rgba(0,0,0, 0.25);
+  height: 10px;
+  width: 10px;
+}
+.icon.play {
+  border-bottom: 6px solid transparent;
+  border-left: 12px solid rgba(0,0,0, 0.25);
+  border-top: 6px solid transparent;
+}
+#player-commands .icon{
+  left: 10px;
+  position: absolute;
+  top: 9px;
+}

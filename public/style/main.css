@@ -1,0 +1,32 @@
+*{
+  outline: none;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+}
+.width-all{
+  width: 90%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.recorder, .viewer {
+  background-color: #f5f5f5;
+  border-right: 2px solid #ddd;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+}
+
+.viewer {
+  border-right: none;
+  background-color: #444;
+}
+
+.safari-window .content > div{
+  height: 350px;
+}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#1985A1">
+    <title>Cimice</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href='./public/style/player-buttons.css' rel='stylesheet' type='text/css'>
+    <link href='./public/style/safari-window.css' rel='stylesheet' type='text/css'>
+    <link href='./public/style/main.css' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+  <section id="demo">
+    <div class="recorder">
+      <div class="cont-c">
+
+            <div id="rec-commands" class="commands">
+              <span class="btn" id="rec"></span>
+            </div>
+
+            <div class="safari-window">
+              <div class="titlebar">
+                <div class="buttons">
+                  <div class="close">
+                    <a class="closebutton" href="#"><span><strong>&times;</strong></span></a>
+                  </div>
+                  <div class="minimize">
+                    <a class="minimizebutton" href="#"><span><strong>&ndash;</strong></span></a>
+                  </div>
+                  <div class="zoom">
+                    <a class="zoombutton" href="#"><span><strong>+</strong></span></a>
+                  </div>
+                </div>
+                <input class="textfield" type="text" placeholder="Search or enter an address">
+              </div>
+              <div class="content">
+                <div id="to-rec">
+                  <style type="text/css">
+                    #box1{background-color: #46494C; height:25px; padding: 10px 70px;}
+                    #box2{background-color: #1985A1; height:100px; padding: 70px 70px;}
+                    #box3{background-color: #DCDCDD; height:100px; padding: 70px 50px;}
+                    #box5{background-color: #4C5C68; height:100px;}
+                    .box-i1{background-color: #737679; width: 50px; height: 20px; border-radius: 3px}
+                    .i11, .i12, .i13 {float: right; margin-left: 20px;}
+                    .i14{width: 20px; border-radius: 100%}
+
+                    .box-i2{background-color: #DCDCDD; width: 55%; height: 10px; margin-bottom: 10px}
+                    .i21{width: 40%; height: 20px;}
+                    .box-i3{background-color: #C5C3C6; width: 20%; height: 90px; margin: 0 2.5%; float: left;}
+                  </style>
+                  <div id="box1" class="bbox">
+                    <div class="box-i1 i11"></div>
+                    <div class="box-i1 i12"></div>
+                    <div class="box-i1 i13"></div>
+                    <div class="box-i1 i14"></div>
+                  </div>
+                  <div id="box2" class="bbox">
+                    <div class="box-i2 i21"></div>
+                    <div class="box-i2 i22"></div>
+                    <div class="box-i2 i23"></div>
+                    <div class="box-i2 i24"></div>
+                  </div>
+                  <div id="box3" class="bbox">
+                    <div class="box-i3 i31"></div>
+                    <div class="box-i3 i32"></div>
+                    <div class="box-i3 i33"></div>
+                    <div class="box-i3 i34"></div>
+                  </div>
+                  <div id="box5" class="bbox"></div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+            </div><!-- safari-window -->
+
+      </div><!-- cont-c -->
+    </div><!-- recorder -->
+
+
+    <div class="viewer">
+      <div class="cont-c">
+
+        <div id="player-commands" class="commands">
+          <button class="btn" id="play">
+            <div class="icon play"></div>
+          </button>
+          <button class="btn" id="stop">
+            <div class="icon stop"></div>
+          </button>
+          <div style="clear: both"></div>
+          <div class="timeline-c">
+            <div id="p"></div>
+            <div id="timeline"></div>
+          </div>
+        </div>
+
+        <div class="safari-window dark">
+          <div class="titlebar">
+            <div class="buttons">
+              <div class="close">
+                <a class="closebutton" href="#"><span><strong>&times;</strong></span></a>
+              </div>
+              <div class="minimize">
+                <a class="minimizebutton" href="#"><span><strong>&ndash;</strong></span></a>
+              </div>
+              <div class="zoom">
+                <a class="zoombutton" href="#"><span><strong>+</strong></span></a>
+              </div>
+            </div>
+            <input class="textfield" type="text" placeholder="Search or enter an address">
+          </div>
+          <div class="content">
+            <div id="to-view"></div>
+          </div>
+        </div><!-- safari-window -->
+
+      </div><!-- cont-c -->
+    </div><!-- viewer -->
+
+    <div class="clearfix"></div>
+  </section> <!-- demo -->
+
+  <script src="./public/js/jquery.js"></script>
+  <script src="./public/js/highlight.pack.js"></script>
+  <script src="dist/cimice.min.js"></script>
+  <script src="./public/js/main.js"></script>
+  </body>
+</html>
