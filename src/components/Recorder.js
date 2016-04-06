@@ -41,7 +41,7 @@ export default class Recorder extends Camera {
      *
      * @event Recorder#startRecording
      */
-    this.on('startRecording', x => {
+    this.on('startRecording', () => {
       this.isRecording = true;
     });
 
@@ -50,7 +50,7 @@ export default class Recorder extends Camera {
      *
      * @event Recorder#stopRecording
      */
-    this.on('stopRecording', x => {
+    this.on('stopRecording', () => {
       this.isRecording = false;
     });
 
@@ -58,7 +58,7 @@ export default class Recorder extends Camera {
      * Fires on recording of every event
      *
      * @event Recorder#recording
-     * @property {Object} e Event object
+     * @property {Event} e Event object
      */
     this.on('recording', e => {});
   }
@@ -192,7 +192,7 @@ export default class Recorder extends Camera {
   /**
    * Method called on any triggered event
    * @param  {Function} callback Callback to use on trigger
-   * @param  {Object} event Event object
+   * @param  {Event} event Event object
    * @private
    */
   onEventCallback(callback, event){

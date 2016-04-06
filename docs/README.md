@@ -1,3 +1,78 @@
+# Recorder
+
+**Extends Camera**
+
+Class responsible for recording
+
+## constructor
+
+Create recorder
+
+**Parameters**
+
+-   `opts` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)=(default {})** Options
+    -   `opts.target` **[HTMLElement](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)=** HTMLElement on which track all events
+    -   `opts.onEvents` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)=** Define custom event callbacks for each event (optional, default `{}`)
+    -   `opts.events` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>=** Events to track (optional, default `['mousemove','click','scroll','resize']`)
+
+**Examples**
+
+```javascript
+let recorder = new cimice.Recorder({
+    target: document.getElementById('to-rec'),
+    events: ['mousemove', 'scroll'],
+    onEvents: {
+      'scroll': (recorder, movie, e) => {
+        console.log('Override default scroll event callback');
+       }
+    }
+});
+```
+
+## getEvents
+
+Returns the array of events that will be binded to the target
+
+Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>** Events
+
+## getMovie
+
+Get recorded movie
+
+Returns **Movie** 
+
+## setEvents
+
+Set an array of events that will be binded to the target. This method
+overrides the previous set of events.
+
+**Parameters**
+
+-   `events` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)\|[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>)** Event or array of events
+
+**Examples**
+
+```javascript
+recorder.setEvents('resize');
+console.log(recorder.getEvents());
+// -> ['resize']
+recorder.setEvents(['click','mousemove','scroll']);
+console.log(recorder.getEvents());
+// -> ['click','mousemove','scroll']
+```
+
+Returns **this** 
+
+## startRecording
+
+Bind all events to the target and start recording
+
+## stopRecording
+
+Unbind all events and return recorded data
+
+Returns **Movie** Recorded movie
+
 # Movie
 
 Class containing recorded frames
@@ -122,3 +197,19 @@ console.log(JSON.stringify(frame));
 ```
 
 Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** String in JSON format
+
+# Recorder#recording
+
+Fires on recording of every event
+
+**Properties**
+
+-   `e` **[Event](https://developer.mozilla.org/en-US/docs/Web/API/Event)** Event object
+
+# Recorder#startRecording
+
+Fires when start recording
+
+# Recorder#stopRecording
+
+Fires when stop recording
