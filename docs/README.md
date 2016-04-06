@@ -73,6 +73,64 @@ Unbind all events and return recorded data
 
 Returns **Movie** Recorded movie
 
+# Player
+
+**Extends Camera**
+
+Class responsible of playing recorded data
+
+## constructor
+
+Create player
+
+**Parameters**
+
+-   `opts` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)=(default {})** Options
+    -   `opts.target` **[HTMLElement](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)=** HTMLElement on which play data
+    -   `opts.onEvents` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)=** Define custom event callbacks for each event (optional, default `{}`)
+
+**Examples**
+
+```javascript
+let player = new cimice.Player({
+    target: document.getElementById('to-play'),
+    onEvents: {
+      'scroll': (player, frame) => {
+        console.log('Override default scroll event callback');
+       }
+    }
+});
+```
+
+## play
+
+Play the movie
+
+Returns **this** 
+
+## setMovie
+
+Set movie containing frames to watch
+
+**Parameters**
+
+-   `movie` **Movie** Movie to play
+
+**Examples**
+
+```javascript
+let movie = new cimice.Movie();
+player.setMovie(movie);
+```
+
+Returns **this** 
+
+## stop
+
+Stop the movie if it's playing
+
+Returns **this** 
+
 # Movie
 
 Class containing recorded frames
@@ -197,6 +255,22 @@ console.log(JSON.stringify(frame));
 ```
 
 Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** String in JSON format
+
+# Player#play
+
+Fires on movie play
+
+# Player#playing
+
+Fires on playing on every frame
+
+**Properties**
+
+-   `frame` **Frame** Frame playing
+
+# Player#stop
+
+Fires on movie stop
 
 # Recorder#recording
 
