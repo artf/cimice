@@ -84,8 +84,8 @@ export default class Movie {
    * during the recording and send back to server
    * @returns {string} JSON data
    * @example
-   * var json = JSON.stringify(movie);
-   * var xhr = new XMLHttpRequest();
+   * let json = JSON.stringify(movie);
+   * let xhr = new XMLHttpRequest();
    * xhr.open('POST', url);
    * xhr.send(json);
    */
