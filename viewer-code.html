@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mistrustful Demo</title>
+    <link href='./public/style/highlight-hybrid.css' rel='stylesheet' type='text/css'>
+    <link href='./public/style/main.css' rel='stylesheet' type='text/css'>
+    <script src="./public/js/highlight.pack.js"></script>
+    <style type="text/css">
+      .hljs{ background-color: #2c2c2c;}
+    </style>
+  </head>
+  <body class="codep">
+    <pre><code id="jscode" class="js">
+      var player = new cimice.Player({
+        target: document.getElementById('to-view')
+      });
+
+      player.setMovie(recorder.getMovie());
+      // Of course, you can also create movie from JSON:
+      // var movie = new cimice.Movie(movieJSON);
+
+      player.play();
+    </code></pre>
+    <script type="text/javascript">
+      window.addEventListener('load', function(){
+        var block = document.getElementById('jscode');
+        hljs.highlightBlock(block);
+      });
+    </script>
+  </body>
+</html>

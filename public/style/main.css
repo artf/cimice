@@ -1,0 +1,189 @@
+*{
+  outline: none;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+}
+pre, code{
+  margin:0;
+  padding:0
+  !important;
+}
+.width-all{
+  width: 90%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.recorder, .viewer {
+  background-color: #f5f5f5;
+  border-right: 2px solid #ddd;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+}
+
+.viewer {
+  border-right: none;
+  background-color: #444;
+}
+
+.safari-window .content > div{
+  height: 350px;
+}
+
+header {
+  color: #444;
+  min-height: 1000px;
+  position: relative;
+  overflow: hidden;
+}
+header > section {
+  text-align: center;
+  padding: 10em 7em 7em;
+}
+a{
+  color:#1985a1;
+  text-decoration: none;
+}
+
+.cimice-logo{
+  font-family: 'Seaweed Script', cursive;
+  font-size: 80pt;
+}
+.under-logo > span{
+  font-size: 21px;
+}
+.btn {
+    border: 2px solid #1985a1;
+    color: #1985a1;
+    font-size: 20px;
+    background-color: transparent;
+    padding: 12px 30px;
+    border-radius: 10px;
+    margin: 50px 0 0 0;
+    cursor: pointer;
+}
+.btn2 {
+  background-color: #1985a1;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  margin: 10px 0;
+  padding: 15px 37px;
+  text-decoration: none;
+}
+.text-danger{ color: #f04242;}
+.text-info{ color: #4fbcfd;}
+.clearfix{clear: both;}
+
+
+.github-ribbon{
+  background-color:#444;
+  top:3.2em;
+  right:-3.7em;
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -ms-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  transform:rotate(45deg);
+  box-shadow:0 0 3px #555;
+  color:#fff;
+  padding:.6em 3.5em;
+  position:absolute;
+  font:bold .82em sans-serif;
+  text-align:center;
+  text-decoration:none !important;
+  text-shadow:none;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none
+}
+
+#demo .instr { min-height: 95px;}
+.instr {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+.cont-c { padding: 50px 25px 150px;}
+.instr > h3, .instr > h2 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 0 0 5px;
+  padding-bottom: 5px;
+}
+.instr > span {  font-size: 0.8em;}
+.recorder .instr{color: #777;}
+.viewer .instr{color: #cbcbcb;}
+.recorder .instr > h3 {color: #555;}
+.viewer .instr > h3 {color: #eee;}
+
+.code-cont {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  margin: 100px auto;
+  overflow: hidden;
+  width: 90%;
+}
+.codeframes{
+  display: block;
+  border: none;
+  width: 100%;
+}
+.codeframes, .codep pre code{
+  min-height: 200px;
+  font-size: 12px;
+}
+.links-c {
+  padding: 200px 0;
+  text-align: center;
+}
+section.copyr-content {
+  background-color: #444;
+  color: #d5d5d5;
+  padding: 5px;
+  text-align: center;
+}
+
+.tiny {  font-size: 10px;}
+.full .btn-cont {
+    text-align: center;
+    padding: 100px;
+}
+.btn-l {
+    background-color: #aaa;
+}
+.btn-l:hover {
+    background-color: #1985a1;
+}
+
+.outro {
+    font-size: 25px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+
+@media screen and (max-width: 64em) {
+  .recorder, .viewer{
+    width: 100%;
+  }
+
+  #box1 .i11, #box1 .i12, #box1 .i13{
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 42em) {
+
+  .cimice-logo{
+    font-size: 50pt;
+  }
+
+  header > section {
+    padding: 10em 1em 7em;
+  }
+}

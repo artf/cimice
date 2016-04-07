@@ -1,0 +1,126 @@
+.safari-window {
+  background: #fff;
+  width: 90%;
+  margin: 15px auto 0;
+  border: 1px solid #acacac;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px #acacac;
+  font-family: Helvetica, sans-serif;
+}
+
+.safari-window .titlebar {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #e1dfe1, color-stop(1.0, #d5d3d5)));
+  background: -webkit-linear-gradient(top, #e1dfe1, #d5d3d5);
+  background: -moz-linear-gradient(top, #e1dfe1, #d5d3d5);
+  background: -ms-linear-gradient(top, #e1dfe1, #d5d3d5);
+  background: -o-linear-gradient(top, #e1dfe1, #d5d3d5);
+  background: linear-gradient(top, #e1dfe1, #d5d3d5);
+  color: #4d494d;
+  font-size: 11pt;
+  line-height: 20px;
+  text-align: center;
+  width: 100%;
+  height: 37px;
+  border-top: 1px solid #f2f1f2;
+  border-bottom: 1px solid #b5b3b5;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  cursor: default;
+}
+
+.safari-window .buttons {
+  padding-left: 8px;
+  padding-top: 11px;
+  float: left;
+  line-height: 0px;
+}
+
+.safari-window .buttons > div {
+  font-size: 9pt;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 11px;
+  margin-left: 4px;
+}
+
+.safari-window .buttons > div > a {
+  visibility: hidden;
+  cursor: default;
+}
+
+.safari-window .close {
+  background: #ff5c5c;
+  border: 1px solid #e33e41;
+}
+.safari-window .minimize {
+  background: #ffbd4c;
+  border: 1px solid #e09e3e;
+}
+.safari-window .zoom {
+  background: #00ca56;
+  border: 1px solid #14ae46;
+}
+.safari-window .closebutton { color: #820005;}
+.safari-window .minimizebutton { color: #9a5518; }
+.safari-window .zoombutton { color: #006519; }
+
+.safari-window .textfield {
+  font-size: 10pt;
+  width: 50%; height: 20px;
+  padding-left: 15px;
+  margin-top: 7px;
+  border: none;
+  border-bottom: 1px solid #c1c0c1;
+  border-radius: 4px;
+  cursor: default;
+  outline: none;
+}
+.safari-window .content > div {
+  width: 100%; min-height: 350px;
+  overflow: auto;
+  border: none;
+  -webkit-border-bottom-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+#to-view{overflow: hidden;}
+.dotClick {
+    background-color: #f04242;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    box-shadow: 0 0 3px #d92b2b;
+    margin-left: -5px;
+    margin-top: -5px;
+}
+
+/**---DARK---**/
+.dark.safari-window {
+  background-color:#4f4f4f;
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+.dark.safari-window .titlebar{
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #444, color-stop(1.0, #3f3f3f)));
+  background: -webkit-linear-gradient(top, #444, #3f3f3f);
+  background: -moz-linear-gradient(top, #444, #3f3f3f);
+  background: -ms-linear-gradient(top, #444, #3f3f3f);
+  background: -o-linear-gradient(top, #444, #3f3f3f);
+  background: linear-gradient(top, #444, #3f3f3f);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.dark.safari-window .textfield {
+  background-color: rgba(255,255,255, 0.2);
+  border-bottom: 1px solid rgba(0,0,0, 0.3);
+  color: #ededed;
+}

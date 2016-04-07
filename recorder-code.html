@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mistrustful Demo</title>
+    <link href='./public/style/atelier-heath-light.css' rel='stylesheet' type='text/css'>
+    <link href='./public/style/main.css' rel='stylesheet' type='text/css'>
+    <script src="./public/js/highlight.pack.js"></script>
+  </head>
+  <body class="codep">
+    <pre><code id="jscode" class="js">
+      var recorder = new cimice.Recorder({
+        target: document.documentElement;
+      });
+
+      recorder.startRecording();
+
+      recorder.on('recording', function() {
+        console.log(recorder.getMovie());
+      });
+
+    </code></pre>
+    <script type="text/javascript">
+      window.addEventListener('load', function(){
+        var block = document.getElementById('jscode');
+        hljs.highlightBlock(block);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1341 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>  | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation'>
+  <div class='container'>
+    <div class='clearfix md-mxn2'>
+      <div class='fixed md-show fix-3 overflow-auto max-height-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'></h3>
+          <div class='mb1'><code></code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block field'
+            type='text' />
+          <div id='toc'>
+              <a
+                href='#Recorder'
+                class='block bold'>
+                Recorder
+              </a>
+                <a
+                  href='#Recorder.constructor'
+                  class='regular block'>
+                  #constructor
+                </a>
+                <a
+                  href='#Recorder.getEvents'
+                  class='regular block'>
+                  #getEvents
+                </a>
+                <a
+                  href='#Recorder.getMovie'
+                  class='regular block'>
+                  #getMovie
+                </a>
+                <a
+                  href='#Recorder.setEvents'
+                  class='regular block'>
+                  #setEvents
+                </a>
+                <a
+                  href='#Recorder.startRecording'
+                  class='regular block'>
+                  #startRecording
+                </a>
+                <a
+                  href='#Recorder.stopRecording'
+                  class='regular block'>
+                  #stopRecording
+                </a>
+              <a
+                href='#Player'
+                class='block bold'>
+                Player
+              </a>
+                <a
+                  href='#Player.constructor'
+                  class='regular block'>
+                  #constructor
+                </a>
+                <a
+                  href='#Player.getCursor'
+                  class='regular block'>
+                  #getCursor
+                </a>
+                <a
+                  href='#Player.getCursorX'
+                  class='regular block'>
+                  #getCursorX
+                </a>
+                <a
+                  href='#Player.getCursorY'
+                  class='regular block'>
+                  #getCursorY
+                </a>
+                <a
+                  href='#Player.play'
+                  class='regular block'>
+                  #play
+                </a>
+                <a
+                  href='#Player.setMovie'
+                  class='regular block'>
+                  #setMovie
+                </a>
+                <a
+                  href='#Player.stop'
+                  class='regular block'>
+                  #stop
+                </a>
+              <a
+                href='#Movie'
+                class='block bold'>
+                Movie
+              </a>
+                <a
+                  href='#Movie.addFrame'
+                  class='regular block'>
+                  #addFrame
+                </a>
+                <a
+                  href='#Movie.constructor'
+                  class='regular block'>
+                  #constructor
+                </a>
+                <a
+                  href='#Movie.getFrames'
+                  class='regular block'>
+                  #getFrames
+                </a>
+                <a
+                  href='#Movie.setFrames'
+                  class='regular block'>
+                  #setFrames
+                </a>
+                <a
+                  href='#Movie.toJSON'
+                  class='regular block'>
+                  #toJSON
+                </a>
+              <a
+                href='#Frame'
+                class='block bold'>
+                Frame
+              </a>
+                <a
+                  href='#Frame.constructor'
+                  class='regular block'>
+                  #constructor
+                </a>
+                <a
+                  href='#Frame.toJSON'
+                  class='regular block'>
+                  #toJSON
+                </a>
+              <a
+                href='#Player#play'
+                class='block bold'>
+                Player#play
+              </a>
+              <a
+                href='#Player#playing'
+                class='block bold'>
+                Player#playing
+              </a>
+              <a
+                href='#Player#stop'
+                class='block bold'>
+                Player#stop
+              </a>
+              <a
+                href='#Recorder#recording'
+                class='block bold'>
+                Recorder#recording
+              </a>
+              <a
+                href='#Recorder#startRecording'
+                class='block bold'>
+                Recorder#startRecording
+              </a>
+              <a
+                href='#Recorder#stopRecording'
+                class='block bold'>
+                Recorder#stopRecording
+              </a>
+          </div>
+        </div>
+      </div>
+      <div class='fix-margin-3'>
+        <div class='px2'>
+<div class='py1'><section class='py2 clearfix'>
+  <h2 id='Recorder' class='mt0'>
+    Recorder<span class='gray'></span>
+  </h2>
+    <p>
+      Extends
+        Camera
+    </p>
+  
+  
+  
+  
+  
+  <p>Class responsible for recording</p>
+
+      <h4>Instance members</h4>
+        <div class='collapsible' id='Recorder.constructor'>
+          <a href='#Recorder.constructor'>
+            <code>
+              #constructor<span class='gray'>([opts])</span>
+            </code>
+            <div class='force-inline'>
+              <p>Create recorder</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Recorder.constructor' class='mt0'>
+    constructor<span class='gray'>([opts])</span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Create recorder</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+=
+(default {})
+ <strong>opts</strong>
+          :
+          <div class='force-inline'>
+            <p>Options</p>
+
+          </div>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>
+=
+ opts.target
+                  <p>HTMLElement on which track all events</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+=
+ opts.onEvents
+                    (default <code>{}</code>)
+                  <p>Define custom event callbacks for each event</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+.<
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+>
+=
+ opts.events
+                    (default <code>[&#x27;mousemove&#x27;,&#x27;click&#x27;,&#x27;scroll&#x27;,&#x27;resize&#x27;]</code>)
+                  <p>Events to track</p>
+</li>
+            </ul>
+        </li>
+    </ul>
+    <h4>Examples</h4>
+
+    <pre class='overflow-auto'><span class="hljs-keyword">let</span> recorder = <span class="hljs-keyword">new</span> cimice.Recorder({
+    target: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'to-rec'</span>),
+    events: [<span class="hljs-string">'mousemove'</span>, <span class="hljs-string">'scroll'</span>],
+    onEvents: {
+      <span class="hljs-string">'scroll'</span>: (recorder, movie, e) =&gt; {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Override default scroll event callback'</span>);
+       }
+    }
+});</pre>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Recorder.getEvents'>
+          <a href='#Recorder.getEvents'>
+            <code>
+              #getEvents<span class='gray'></span>
+            </code>
+            <div class='force-inline'>
+              <p>Returns the array of events that will be binded to the target</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Recorder.getEvents' class='mt0'>
+    getEvents<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Returns the array of events that will be binded to the target</p>
+
+      <h4>Returns</h4>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+.<
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+>
+</code>
+      :
+      <div class='force-inline'>
+        <p>Events</p>
+
+      </div>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Recorder.getMovie'>
+          <a href='#Recorder.getMovie'>
+            <code>
+              #getMovie<span class='gray'></span>
+            </code>
+            <div class='force-inline'>
+              <p>Get recorded movie</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Recorder.getMovie' class='mt0'>
+    getMovie<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Get recorded movie</p>
+
+      <h4>Returns</h4>
+      <code>Movie
+</code>
+      
+      <div class='force-inline'>
+        
+      </div>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Recorder.setEvents'>
+          <a href='#Recorder.setEvents'>
+            <code>
+              #setEvents<span class='gray'>(events)</span>
+            </code>
+            <div class='force-inline'>
+              <p>Set an array of events that will be binded to the target. This method
+overrides the previous set of events.</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Recorder.setEvents' class='mt0'>
+    setEvents<span class='gray'>(events)</span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Set an array of events that will be binded to the target. This method
+overrides the previous set of events.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li>(
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+|
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+.<
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+>
+)
+ <strong>events</strong>
+          :
+          <div class='force-inline'>
+            <p>Event or array of events</p>
+
+          </div>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code>this
+</code>
+      
+      <div class='force-inline'>
+        
+      </div>
+    <h4>Examples</h4>
+
+    <pre class='overflow-auto'>recorder.setEvents(<span class="hljs-string">'resize'</span>);
+<span class="hljs-built_in">console</span>.log(recorder.getEvents());
+<span class="hljs-comment">// -&gt; ['resize']</span>
+recorder.setEvents([<span class="hljs-string">'click'</span>,<span class="hljs-string">'mousemove'</span>,<span class="hljs-string">'scroll'</span>]);
+<span class="hljs-built_in">console</span>.log(recorder.getEvents());
+<span class="hljs-comment">// -&gt; ['click','mousemove','scroll']</span></pre>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Recorder.startRecording'>
+          <a href='#Recorder.startRecording'>
+            <code>
+              #startRecording<span class='gray'></span>
+            </code>
+            <div class='force-inline'>
+              <p>Bind all events to the target and start recording</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Recorder.startRecording' class='mt0'>
+    startRecording<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Bind all events to the target and start recording</p>
+
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Recorder.stopRecording'>
+          <a href='#Recorder.stopRecording'>
+            <code>
+              #stopRecording<span class='gray'></span>
+            </code>
+            <div class='force-inline'>
+              <p>Unbind all events and return recorded data</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Recorder.stopRecording' class='mt0'>
+    stopRecording<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Unbind all events and return recorded data</p>
+
+      <h4>Returns</h4>
+      <code>Movie
+</code>
+      :
+      <div class='force-inline'>
+        <p>Recorded movie</p>
+
+      </div>
+</section>
+          </div>
+        </div>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='Player' class='mt0'>
+    Player<span class='gray'></span>
+  </h2>
+    <p>
+      Extends
+        Camera
+    </p>
+  
+  
+  
+  
+  
+  <p>Class responsible of playing recorded data</p>
+
+      <h4>Instance members</h4>
+        <div class='collapsible' id='Player.constructor'>
+          <a href='#Player.constructor'>
+            <code>
+              #constructor<span class='gray'>([opts])</span>
+            </code>
+            <div class='force-inline'>
+              <p>Create player</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Player.constructor' class='mt0'>
+    constructor<span class='gray'>([opts])</span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Create player</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+=
+(default {})
+ <strong>opts</strong>
+          :
+          <div class='force-inline'>
+            <p>Options</p>
+
+          </div>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>
+=
+ opts.target
+                  <p>HTMLElement on which play data</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+=
+ opts.onEvents
+                    (default <code>{}</code>)
+                  <p>Define custom event callbacks for each event</p>
+</li>
+            </ul>
+        </li>
+    </ul>
+    <h4>Examples</h4>
+
+    <pre class='overflow-auto'><span class="hljs-keyword">let</span> player = <span class="hljs-keyword">new</span> cimice.Player({
+    target: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'to-play'</span>),
+    onEvents: {
+      <span class="hljs-string">'scroll'</span>: (player, frame) =&gt; {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Override default scroll event callback'</span>);
+       }
+    }
+});</pre>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Player.getCursor'>
+          <a href='#Player.getCursor'>
+            <code>
+              #getCursor<span class='gray'></span>
+            </code>
+            <div class='force-inline'>
+              <p>Return cursor element</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Player.getCursor' class='mt0'>
+    getCursor<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Return cursor element</p>
+
+      <h4>Returns</h4>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>
+</code>
+      
+      <div class='force-inline'>
+        
+      </div>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Player.getCursorX'>
+          <a href='#Player.getCursorX'>
+            <code>
+              #getCursorX<span class='gray'>(frame)</span>
+            </code>
+            <div class='force-inline'>
+              <p>Return cursor horizontal position, expressed in pixels</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Player.getCursorX' class='mt0'>
+    getCursorX<span class='gray'>(frame)</span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Return cursor horizontal position, expressed in pixels</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li>(
+Frame
+|
+null
+)
+ <strong>frame</strong>
+          :
+          <div class='force-inline'>
+            <p>Frame on which get position, in case of null will use current frame</p>
+
+          </div>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+</code>
+      
+      <div class='force-inline'>
+        
+      </div>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Player.getCursorY'>
+          <a href='#Player.getCursorY'>
+            <code>
+              #getCursorY<span class='gray'>(frame)</span>
+            </code>
+            <div class='force-inline'>
+              <p>Return cursor vertical position, expressed in pixels</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Player.getCursorY' class='mt0'>
+    getCursorY<span class='gray'>(frame)</span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Return cursor vertical position, expressed in pixels</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li>(
+Frame
+|
+null
+)
+ <strong>frame</strong>
+          :
+          <div class='force-inline'>
+            <p>Frame on which get position, in case of null will use current frame</p>
+
+          </div>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+</code>
+      
+      <div class='force-inline'>
+        
+      </div>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Player.play'>
+          <a href='#Player.play'>
+            <code>
+              #play<span class='gray'></span>
+            </code>
+            <div class='force-inline'>
+              <p>Play the movie</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Player.play' class='mt0'>
+    play<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Play the movie</p>
+
+      <h4>Returns</h4>
+      <code>this
+</code>
+      
+      <div class='force-inline'>
+        
+      </div>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Player.setMovie'>
+          <a href='#Player.setMovie'>
+            <code>
+              #setMovie<span class='gray'>(movie)</span>
+            </code>
+            <div class='force-inline'>
+              <p>Set movie containing frames to watch</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Player.setMovie' class='mt0'>
+    setMovie<span class='gray'>(movie)</span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Set movie containing frames to watch</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li>Movie
+ <strong>movie</strong>
+          :
+          <div class='force-inline'>
+            <p>Movie to play</p>
+
+          </div>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code>this
+</code>
+      
+      <div class='force-inline'>
+        
+      </div>
+    <h4>Examples</h4>
+
+    <pre class='overflow-auto'><span class="hljs-keyword">let</span> movie = <span class="hljs-keyword">new</span> cimice.Movie();
+player.setMovie(movie);</pre>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Player.stop'>
+          <a href='#Player.stop'>
+            <code>
+              #stop<span class='gray'></span>
+            </code>
+            <div class='force-inline'>
+              <p>Stop the movie if it's playing</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Player.stop' class='mt0'>
+    stop<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Stop the movie if it's playing</p>
+
+      <h4>Returns</h4>
+      <code>this
+</code>
+      
+      <div class='force-inline'>
+        
+      </div>
+</section>
+          </div>
+        </div>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='Movie' class='mt0'>
+    Movie<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Class containing recorded frames</p>
+
+      <h4>Instance members</h4>
+        <div class='collapsible' id='Movie.addFrame'>
+          <a href='#Movie.addFrame'>
+            <code>
+              #addFrame<span class='gray'>([frame])</span>
+            </code>
+            <div class='force-inline'>
+              <p>Add new frame to the collection. If the object passed is an instance of Frame
+it will added as it is, in case of simple object will create a new Frame
+and set actual timestamp.</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Movie.addFrame' class='mt0'>
+    addFrame<span class='gray'>([frame])</span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Add new frame to the collection. If the object passed is an instance of Frame
+it will added as it is, in case of simple object will create a new Frame
+and set actual timestamp.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li>(
+Frame
+|
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+)
+=
+(default {})
+ <strong>frame</strong>
+          :
+          <div class='force-inline'>
+            <p>Frame instance or object</p>
+
+          </div>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code>(
+Frame
+|
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>
+)
+</code>
+      :
+      <div class='force-inline'>
+        <p>Added frame</p>
+
+      </div>
+    <h4>Examples</h4>
+
+    <pre class='overflow-auto'><span class="hljs-keyword">let</span> frame1 = movie.addFrame({eventType: <span class="hljs-string">'click'</span>});
+<span class="hljs-comment">// Or</span>
+<span class="hljs-keyword">let</span> frame = <span class="hljs-keyword">new</span> cimice.Frame({eventType: <span class="hljs-string">'click'</span>});
+<span class="hljs-keyword">let</span> frame2 = movie.addFrame(frame);</pre>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Movie.constructor'>
+          <a href='#Movie.constructor'>
+            <code>
+              #constructor<span class='gray'>([opts])</span>
+            </code>
+            <div class='force-inline'>
+              <p>Create movie</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Movie.constructor' class='mt0'>
+    constructor<span class='gray'>([opts])</span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Create movie</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+=
+(default {})
+ <strong>opts</strong>
+          :
+          <div class='force-inline'>
+            <p>Options</p>
+
+          </div>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+.<
+(
+Frame
+|
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+)
+>
+=
+ opts.frames
+                    (default <code>[]</code>)
+                  <p>Array of frames</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+=
+ opts.top
+                    (default <code>0</code>)
+                  <p>Top position of the movie, relative to document</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+=
+ opts.left
+                    (default <code>0</code>)
+                  <p>Left position of the movie, relative to document</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+=
+ opts.scrollX
+                    (default <code>0</code>)
+                  <p>The initial horizontal scroll position inside player target</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+=
+ opts.scrollY
+                    (default <code>0</code>)
+                  <p>The initial vertical scroll position inside player target</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+=
+ opts.scene
+                    (default <code>&#x27;&#x27;</code>)
+                  <p>Base64 encoded HTML string</p>
+</li>
+            </ul>
+        </li>
+    </ul>
+    <h4>Examples</h4>
+
+    <pre class='overflow-auto'><span class="hljs-keyword">let</span> frame = <span class="hljs-keyword">new</span> cimice.Frame({eventType: <span class="hljs-string">'click'</span>});
+<span class="hljs-keyword">let</span> movie = <span class="hljs-keyword">new</span> cimice.Movie({
+    top: <span class="hljs-number">100</span>,
+    left: <span class="hljs-number">100</span>,
+    scene: <span class="hljs-string">'SGFja2VyIERldGVjdGVkIQ=='</span>,
+    frames: [
+      {eventType: <span class="hljs-string">'click'</span>},
+      frame,
+      {eventType: <span class="hljs-string">'mousemove'</span>}
+    ],
+});</pre>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Movie.getFrames'>
+          <a href='#Movie.getFrames'>
+            <code>
+              #getFrames<span class='gray'></span>
+            </code>
+            <div class='force-inline'>
+              <p>Get the collection of frames</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Movie.getFrames' class='mt0'>
+    getFrames<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Get the collection of frames</p>
+
+      <h4>Returns</h4>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+.<
+Frame
+>
+</code>
+      :
+      <div class='force-inline'>
+        <p>Array of frames</p>
+
+      </div>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Movie.setFrames'>
+          <a href='#Movie.setFrames'>
+            <code>
+              #setFrames<span class='gray'>(Array, frames)</span>
+            </code>
+            <div class='force-inline'>
+              <p>Set a new collection of frames.</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Movie.setFrames' class='mt0'>
+    setFrames<span class='gray'>(Array, frames)</span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Set a new collection of frames.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li>(
+Frame
+|
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+|
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+.<
+(
+Frame
+|
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+)
+>
+)
+ <strong>Array</strong>
+          :
+          <div class='force-inline'>
+            <p>of frames or also a single Frame/object</p>
+
+          </div>
+        </li>
+        <li> <strong>frames</strong>
+          :
+          <div class='force-inline'>
+            
+          </div>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code>this
+</code>
+      
+      <div class='force-inline'>
+        
+      </div>
+    <h4>Examples</h4>
+
+    <pre class='overflow-auto'><span class="hljs-keyword">let</span> frame = <span class="hljs-keyword">new</span> cimice.Frame({});
+movie.setFrames(frame);
+<span class="hljs-comment">// frames -&gt; 1</span>
+movie.setFrames([frame, {eventType: <span class="hljs-string">'click'</span>}]);
+<span class="hljs-comment">// frames -&gt; 2</span>
+movie.setFrames({eventType: <span class="hljs-string">'click'</span>});
+<span class="hljs-comment">// frames -&gt; 1</span></pre>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Movie.toJSON'>
+          <a href='#Movie.toJSON'>
+            <code>
+              #toJSON<span class='gray'></span>
+            </code>
+            <div class='force-inline'>
+              <p>Returns movie and related frames in JSON format. Generally coulde be used to extract data
+during the recording and send back to server</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Movie.toJSON' class='mt0'>
+    toJSON<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Returns movie and related frames in JSON format. Generally coulde be used to extract data
+during the recording and send back to server</p>
+
+      <h4>Returns</h4>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+</code>
+      :
+      <div class='force-inline'>
+        <p>JSON data</p>
+
+      </div>
+    <h4>Examples</h4>
+
+    <pre class='overflow-auto'><span class="hljs-keyword">let</span> json = <span class="hljs-built_in">JSON</span>.stringify(movie);
+<span class="hljs-keyword">let</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+xhr.open(<span class="hljs-string">'POST'</span>, url);
+xhr.send(json);</pre>
+</section>
+          </div>
+        </div>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='Frame' class='mt0'>
+    Frame<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Class representing a single frame</p>
+
+      <h4>Instance members</h4>
+        <div class='collapsible' id='Frame.constructor'>
+          <a href='#Frame.constructor'>
+            <code>
+              #constructor<span class='gray'>([opts])</span>
+            </code>
+            <div class='force-inline'>
+              <p>Create a frame</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Frame.constructor' class='mt0'>
+    constructor<span class='gray'>([opts])</span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Create a frame</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+=
+(default {})
+ <strong>opts</strong>
+          :
+          <div class='force-inline'>
+            <p>Options</p>
+
+          </div>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+=
+ opts.cursorX
+                    (default <code>0</code>)
+                  <p>X cursor position, in pixels</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+=
+ opts.cursorY
+                    (default <code>0</code>)
+                  <p>Y cursor position, in pixels</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+=
+ opts.scrollX
+                    (default <code>0</code>)
+                  <p>X scroll length, in pixels</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+=
+ opts.height
+                    (default <code>0</code>)
+                  <p>Height of the frame, in pixels</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+=
+ opts.width
+                    (default <code>0</code>)
+                  <p>Width of the frame, in pixels</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+=
+ opts.ts
+                    (default <code>0</code>)
+                  <p>Timestamp of the frame</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+=
+ opts.options
+                    (default <code>{}</code>)
+                  <p>Custom options</p>
+</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+=
+ opts.eventType
+                    (default <code>&#x27;&#x27;</code>)
+                  <p>Event type, eg. 'click', 'mousemove'</p>
+</li>
+            </ul>
+        </li>
+    </ul>
+    <h4>Examples</h4>
+
+    <pre class='overflow-auto'><span class="hljs-keyword">let</span> frame = <span class="hljs-keyword">new</span> cimice.Frame({
+    eventType: <span class="hljs-string">'click'</span>,
+    cursorX: <span class="hljs-number">100</span>,
+    cursorY: <span class="hljs-number">100</span>,
+    options: { customProp: <span class="hljs-string">'customValue'</span> }
+});</pre>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Frame.toJSON'>
+          <a href='#Frame.toJSON'>
+            <code>
+              #toJSON<span class='gray'></span>
+            </code>
+            <div class='force-inline'>
+              <p>Returns frame in JSON format</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Frame.toJSON' class='mt0'>
+    toJSON<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Returns frame in JSON format</p>
+
+      <h4>Returns</h4>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+</code>
+      :
+      <div class='force-inline'>
+        <p>String in JSON format</p>
+
+      </div>
+    <h4>Examples</h4>
+
+    <pre class='overflow-auto'><span class="hljs-keyword">let</span> frame = <span class="hljs-keyword">new</span> cimice.Frame({
+    eventType: <span class="hljs-string">'click'</span>,
+    cursorX: <span class="hljs-number">100</span>,
+    cursorY: <span class="hljs-number">100</span>,
+});
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(frame));</pre>
+</section>
+          </div>
+        </div>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='Player#play' class='mt0'>
+    Player#play<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Fires on movie play</p>
+
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='Player#playing' class='mt0'>
+    Player#playing<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Fires on playing on every frame</p>
+
+    <h4>Properties</h4>
+    <ul class='suppress-p-margin'>
+        <li>Frame
+ <strong>frame</strong>
+              :
+              <div class='force-inline'>
+                <p>Frame playing</p>
+
+              </div>
+            </li>
+    </li>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='Player#stop' class='mt0'>
+    Player#stop<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Fires on movie stop</p>
+
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='Recorder#recording' class='mt0'>
+    Recorder#recording<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Fires on recording of every event</p>
+
+    <h4>Properties</h4>
+    <ul class='suppress-p-margin'>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a>
+ <strong>e</strong>
+              :
+              <div class='force-inline'>
+                <p>Event object</p>
+
+              </div>
+            </li>
+    </li>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='Recorder#startRecording' class='mt0'>
+    Recorder#startRecording<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Fires when start recording</p>
+
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='Recorder#stopRecording' class='mt0'>
+    Recorder#stopRecording<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Fires when stop recording</p>
+
+</section>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
