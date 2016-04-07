@@ -144,7 +144,7 @@
 
 	      rec.on('recording', function(e){
 	        localStorage.setItem('cimice', JSON.stringify(rec.getMovie()));
-	        var scrollTop = e.target.body ? e.target.body.scrollTop : e.target.scrollTop;
+	        var scrollTop = e.target.body ? e.target.body.parentNode.scrollTop || e.target.body.scrollTop : e.target.scrollTop;
 	        console.log('event '+ e.type + (e.type=='scroll'? ' ' + scrollTop:''));
 	      });
 

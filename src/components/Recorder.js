@@ -214,8 +214,9 @@ export default class Recorder extends Camera {
    */
   abstractEventCallback(recorder, movie, e){
     let t = e.target;
-    let scrollTop = t.body ? t.body.scrollTop : t.scrollTop;
-    let scrollLeft = t.body ? t.body.scrollLeft : t.scrollLeft;
+    let b = t.body;
+    let scrollTop = b ? (b.parentNode.scrollTop || b.scrollTop) : t.scrollTop;
+    let scrollLeft = b ? (b.parentNode.scrollLeft || b.scrollLeft) : t.scrollLeft;
     movie.addFrame({
       scrollY: scrollTop,
       scrollX: scrollLeft,
