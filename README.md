@@ -127,8 +127,8 @@ player.on('contextmenu', function(frame){
   dot.style.marginLeft = '-5px';
   dot.style.marginTop = '-5px';
   dot.style.position = 'absolute';
-  dot.style.left = player.getCursorX() + 'px';
-  dot.style.top = player.getCursorY() + 'px';
+  dot.style.left = player.getCursorX(frame) + 'px';
+  dot.style.top = player.getCursorY(frame) + 'px';
   target.appendChild(dot);
 });
 

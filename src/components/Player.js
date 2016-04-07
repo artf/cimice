@@ -108,6 +108,42 @@ export default class Player extends Camera {
   }
 
   /**
+   * Return cursor element
+   * @returns {HTMLElement}
+   */
+  getCursor(){
+    return this.cursor;
+  }
+
+  /**
+   * Return cursor horizontal position, expressed in pixels
+   * @param {Frame|null} frame Frame on which get position, in case of null will use current frame
+   * @returns {number}
+   */
+  getCursorX(frame){
+    let f = frame || this.currentFrame;
+    let tr = this.tryGetTarget();
+    let mLeft = this.tryGetMovie().left;
+    let scrollLeft = mLeft === 0 ? f.scrollX : tr.scrollLeft;
+    let x = f.cursorX - mLeft + scrollLeft;
+    return x;
+  }
+
+  /**
+   * Return cursor vertical position, expressed in pixels
+   * @param {Frame|null} frame Frame on which get position, in case of null will use current frame
+   * @returns {number}
+   */
+  getCursorY(frame){
+    let f = frame || this.currentFrame;
+    let tr = this.tryGetTarget();
+    let mTop = this.tryGetMovie().top;
+    let scrollTop = mTop === 0 ? f.scrollY : tr.scrollTop;
+    let y = f.cursorY - mTop + scrollTop;
+    return y;
+  }
+
+  /**
    * Generate an iframe, if not yet created, and push the decoded scene from the movie
    * @return {HTMLElement} iframe element
    * @private

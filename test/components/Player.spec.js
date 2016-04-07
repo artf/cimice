@@ -27,7 +27,21 @@ describe('Player', () => {
   });
 
   it('Cursor not undefined', () => {
-    expect(player.cursor).to.be.instanceOf(window.HTMLElement);
+    expect(player.getCursor()).to.be.instanceOf(window.HTMLElement);
+  });
+
+  it('Return correctly cursor horizontal position', () => {
+    let frame = movie.addFrame({cursorX: 5});
+    player.setMovie(movie);
+    player.setTarget(target);
+    expect(player.getCursorX(frame)).to.equal(5);
+  });
+
+  it('Return correctly cursor vertical position', () => {
+    let frame = movie.addFrame({cursorY: 5});
+    player.setMovie(movie);
+    player.setTarget(target);
+    expect(player.getCursorY(frame)).to.equal(5);
   });
 
   it('Playing flag is false', () => {
