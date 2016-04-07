@@ -18,7 +18,11 @@ pre, code{
   max-width: 980px;
   margin: 0 auto;
 }
-
+.social {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 .recorder, .viewer {
   background-color: #f5f5f5;
   border-right: 2px solid #ddd;

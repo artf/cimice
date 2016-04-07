@@ -2,8 +2,16 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="theme-color" content="#1985A1">
     <title>Cimice</title>
+    <meta property="og:url" content="http://artf.github.io/cimice/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cimice" />
+    <meta name="theme-color" content="#1985A1">
+    <meta name="description" content="Experimental open source user session recorder">
+    <meta name="keywords" content="user session recorder replay screen browser">
+    <meta name="author" content="Artur Arseniev">
+    <meta property="og:description"   content="Experimental open source user session recorder" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Seaweed+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link href='./public/style/player-buttons.css' rel='stylesheet' type='text/css'>
@@ -21,6 +29,27 @@
       <button class="btn scroll-link" data-target="#demo">Try it out</button> <br/>
       <a class="btn2" href="https://github.com/artf/cimice/archive/master.zip">Get latest</a>
     </section>
+    <div class="social">
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      </script>
+      <div>
+          <div class="btn-share">
+            <div class="fb-share-button" data-href="http://artf.github.io/cimice/" data-layout="button"></div>
+
+            <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="http://artf.github.io/cimice/" data-text="Experimental open source user session recorder" data-hashtags="cimice">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+            </script>
+
+          </div>
+      </div>
+    </div>
   </header>
 
   <section id="demo">
