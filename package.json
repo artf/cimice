@@ -1,6 +1,6 @@
 {
   "name": "cimice",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Experimental user session recorder",
   "author": "Artur Arseniev",
   "main": "dist/cimice.min.js",
