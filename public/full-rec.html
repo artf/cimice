@@ -140,12 +140,9 @@
 
 			<script src="./../dist/cimice.min.js"></script>
 	    <script>
-	      var rec = new cimice.Recorder({ target: document.documentElement,
-	      events: ['mousemove', 'click', 'scroll', 'resize', 'contextmenu'] });
+	      var rec = new cimice.Recorder({ target: document.documentElement });
 	      rec.on('recording', function(e){
 	        localStorage.setItem('cimice-full', JSON.stringify(rec.getMovie()));
-	        var scrollTop = e.target.body ? e.target.body.parentNode.scrollTop || e.target.body.scrollTop : e.target.scrollTop;
-  				console.log('event '+ e.type + (e.type=='scroll'? ' ' + scrollTop:''));
 	      });
 	      rec.startRecording();
 	    </script>

@@ -1,6 +1,6 @@
 # Cimice
 
-Cimice is an experimental user session recorder. The goal is to recreate, at least in part, the core function of already popular cloud services available online like Hotjar or Inspectlet.
+Cimice is an experimental user session recorder. The goal is to recreate, at least in part, the core function of already popular cloud services available online ([see below](#cool-cloud-services)).
 
 ## Features
 
@@ -100,8 +100,9 @@ Cimice comes out of the box with few recordable events (click, mousemove, scroll
 In the example below you will see how to track right mouse click (of course only the click itself, no context menu will pop up)
 
 *Track right mouse click*
+
 ```js
-// Recorder
+// RECORDER
 // At first, init your recorder to be able to listen right click events (contextmenu)
 let rec = new cimice.Recorder({
   target: document.documentElement,
@@ -110,7 +111,7 @@ let rec = new cimice.Recorder({
 rec.startRecording();
 // ... your logic to store data
 
-// Player
+// PLAYER
 // ... fetch your movie and frames data
 let movie = new cimice.Movie(movieJSON);
 var player = new cimice.Player({
@@ -118,7 +119,6 @@ var player = new cimice.Player({
 });
 player.setMovie(movie);
 player.on('contextmenu', function(frame){
-  console.log('right clicked');
   let dot = document.createElement("div");
   dot.style.backgroundColor = 'blue';
   dot.style.width = '10px';
@@ -127,9 +127,9 @@ player.on('contextmenu', function(frame){
   dot.style.marginLeft = '-5px';
   dot.style.marginTop = '-5px';
   dot.style.position = 'absolute';
-  dot.style.left = player.getCursorX(frame) + 'px';
-  dot.style.top = player.getCursorY(frame) + 'px';
-  target.appendChild(dot);
+  dot.style.left = player.getCursorX() + 'px';
+  dot.style.top = player.getCursorY() + 'px';
+  player.getTarget().appendChild(dot);
 });
 
 player.play();
@@ -138,6 +138,16 @@ player.play();
 ## API
 
 You can find [API Reference here](http://artf.github.io/cimice/docs). The documentation is generated via [documentationjs](https://github.com/documentationjs/documentation) so if there is something to fix/add do it inside the code not API file itself
+
+## Cool cloud services
+
+If you're looking for something serious I suggest to checkout this list. If you know others feel free to pull request
+
+* [Hotjar](https://www.hotjar.com/)
+* [Inspectlet](https://www.inspectlet.com/)
+* [Mouseflow](https://mouseflow.com/)
+* [Clicktale](https://www.clicktale.com/)
+* [Add more...](https://github.com/artf/cimice/edit/master/README.md)
 
 ## Known issues & limitations
 
