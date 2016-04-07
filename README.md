@@ -1,6 +1,11 @@
-# Cimice
+# [Cimice](http://artf.github.io/cimice)
+
+[![Build Status](https://travis-ci.org/artf/cimice.svg?branch=master)](https://travis-ci.org/artf/cimice)
 
 Cimice is an experimental user session recorder. The goal is to recreate, at least in part, the core function of already popular cloud services available online ([see below](#cool-cloud-services)).
+
+<p align="center"><img src="http://artf.github.io/cimice/public/images/cimice-demo.gif" alt="Cimice" width="100%" align="center"/></p>
+
 
 ## Features
 
