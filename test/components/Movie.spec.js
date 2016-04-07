@@ -87,6 +87,44 @@ describe('Movie', () => {
     expect(movie.getDecodedScene()).to.equal('<h1>test</h1>');
   });
 
+  it('Correctly set new collection of frames', () => {
+    movie.setFrames([{},{},{}]);
+    expect(movie.getFrames().length).to.equal(3);
+    expect(movie.frames[0].eventType).to.equal('');
+  });
+
+  it('Set frames with a single object', () => {
+    movie.setFrames({eventType: 'test'});
+    expect(movie.getFrames().length).to.equal(1);
+    expect(movie.frames[0].eventType).to.equal('test');
+  });
+
+  it('Set frames with a single instance of Frame', () => {
+    let frame = new Frame({eventType: 'test2'});
+    movie.setFrames(frame);
+    expect(movie.getFrames().length).to.equal(1);
+    expect(movie.frames[0].eventType).to.equal('test2');
+  });
+
+  it('Override previous set of frames', () => {
+    movie.setFrames([{},{},{}]);
+    movie.setFrames({eventType: 'test3'});
+    expect(movie.getFrames().length).to.equal(1);
+    expect(movie.frames[0].eventType).to.equal('test3');
+  });
+
+  it('Set empty argument will remove frames', () => {
+    movie.setFrames([{},{},{}]);
+    movie.setFrames();
+    expect(movie.getFrames().length).to.equal(0);
+  });
+
+  it('Set empty array of frames will remove frames', () => {
+    movie.setFrames([{},{},{}]);
+    movie.setFrames([]);
+    expect(movie.getFrames().length).to.equal(0);
+  });
+
   describe('Initialization with options', () => {
 
     beforeEach(() => {

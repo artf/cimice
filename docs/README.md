@@ -192,6 +192,29 @@ Get the collection of frames
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).&lt;Frame>** Array of frames
 
+## setFrames
+
+Set a new collection of frames.
+
+**Parameters**
+
+-   `Array` **(Frame|[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)\|[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).&lt;(Frame|[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))>)** of frames or also a single Frame/object
+-   `frames`  
+
+**Examples**
+
+```javascript
+let frame = new cimice.Frame({});
+movie.setFrames(frame);
+// frames -> 1
+movie.setFrames([frame, {eventType: 'click'}]);
+// frames -> 2
+movie.setFrames({eventType: 'click'});
+// frames -> 1
+```
+
+Returns **this** 
+
 ## toJSON
 
 Returns movie and related frames in JSON format. Generally coulde be used to extract data
@@ -200,8 +223,8 @@ during the recording and send back to server
 **Examples**
 
 ```javascript
-var json = JSON.stringify(movie);
-var xhr = new XMLHttpRequest();
+let json = JSON.stringify(movie);
+let xhr = new XMLHttpRequest();
 xhr.open('POST', url);
 xhr.send(json);
 ```

@@ -80,6 +80,28 @@ export default class Movie {
   }
 
   /**
+   * Set a new collection of frames.
+   * @param {Frame|Object|Array<Frame|Object>} Array of frames or also a single Frame/object
+   * @returns {this}
+   * @example
+   * let frame = new cimice.Frame({});
+   * movie.setFrames(frame);
+   * // frames -> 1
+   * movie.setFrames([frame, {eventType: 'click'}]);
+   * // frames -> 2
+   * movie.setFrames({eventType: 'click'});
+   * // frames -> 1
+   */
+  setFrames(frames) {
+    let f = [].concat(frames || []);
+    this.frames = [];
+    for (let i = 0; i < f.length; i++) {
+      this.addFrame(f[i]);
+    }
+    return this;
+  }
+
+  /**
    * Returns movie and related frames in JSON format. Generally coulde be used to extract data
    * during the recording and send back to server
    * @returns {string} JSON data
