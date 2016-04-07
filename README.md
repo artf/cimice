@@ -88,7 +88,7 @@ rec.startRecording();
 
 let movieJSON = fetchMovie();
 let movie = new cimice.Movie(movieJSON);
-var player = new cimice.Player({
+let player = new cimice.Player({
   target: document.getElementById('some-div')
 });
 player.setMovie(movie);
@@ -114,7 +114,7 @@ rec.startRecording();
 // PLAYER
 // ... fetch your movie and frames data
 let movie = new cimice.Movie(movieJSON);
-var player = new cimice.Player({
+let player = new cimice.Player({
   target: document.getElementById('some-div')
 });
 player.setMovie(movie);
