@@ -1,6 +1,6 @@
 {
   "name": "cimice",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Experimental user session recorder",
   "author": "Artur Arseniev",
   "main": "dist/cimice.min.js",
@@ -40,7 +40,7 @@
     "test": "mocha --compilers js:babel-core/register --recursive ./test/*.js",
     "test:dev": "mocha --compilers js:babel-core/register --recursive -R min -w ./test/*.js",
     "build": "WEBPACK_ENV=prod && npm run test && webpack && npm run build:doc",
-    "build:doc": "documentation build src/main.js -o ./docs/README.md -f md",
+    "build:doc": "documentation build src/main.js -o ./docs -f html",
     "cover": "babel-node ./node_modules/istanbul/lib/cli cover node_modules/.bin/_mocha -- --compilers js:babel-core/register --recursive -R spec ./test/*.js",
     "dev": "WEBPACK_ENV=dev ./node_modules/.bin/webpack-dev-server --progress --colors"
   },
