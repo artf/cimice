@@ -23,6 +23,10 @@ pre, code{
     bottom: 0;
     left: 0;
 }
+.fb-share-button > span {
+  height: 25px !important;
+  padding-left: 5px;
+}
 .recorder, .viewer {
   background-color: #f5f5f5;
   border-right: 2px solid #ddd;
