@@ -80,7 +80,7 @@
       });
 
       btnPlay.addEventListener('click', function(){
-        var movieJSON = JSON.parse(localStorage.getItem('cimice'));
+        var movieJSON = JSON.parse(localStorage.getItem('cimice-full'));
         var movie = new cimice.Movie(movieJSON);
         player.setMovie(movie);
         player.play();
@@ -92,6 +92,10 @@
 
       player.on('stop',function(){
         btnPlay.className = btnPlay.className.replace(/\bactive\b/,'');
+      });
+
+      player.on('contextmenu', function(frame){
+        console.log('right clicked');
       });
     </script>
   </body>

@@ -19,6 +19,7 @@ Below you can see some of the real live examples on how to use Cimice for better
 ### Recording
 
 **Example 1** *(quick but not recommended)*
+
 Record the entire site and send data to some endpoint every 5 seconds
 
 ```js
@@ -37,6 +38,7 @@ setInterval(() => {
 ```
 
 **Example 2**
+
 The first example is simple but there is a big overhead as you send always all recorded `frames` and keep them in memory.
 Furthermore, you could potentially send data even without user interaction and that is pretty annoying.
 In the example I use `XMLHttpRequest`, to send data over the net, only for the simplicity but you can replace it with your favorite alternative (JQuery, socket.io, etc)
@@ -94,20 +96,58 @@ player.play();
 ```
 
 ### Extend
-Cimice comes out of the box with few recordable events (click, mousemove, scroll and resize), but you can extend this behavior
+Cimice comes out of the box with few recordable events (click, mousemove, scroll and resize), but you can extend this behavior.
+In the example below you will see how to track right mouse click (of course only the click itself, no context menu will pop up)
 
 *Track right mouse click*
 ```js
-contextmenu
+// Recorder
+// At first, init your recorder to be able to listen right click events (contextmenu)
+let rec = new cimice.Recorder({
+  target: document.documentElement,
+  events: ['mousemove', 'click', 'scroll', 'resize', 'contextmenu']
+});
+rec.startRecording();
+// ... your logic to store data
+
+// Player
+// ... fetch your movie and frames data
+let movie = new cimice.Movie(movieJSON);
+var player = new cimice.Player({
+  target: document.getElementById('some-div')
+});
+player.setMovie(movie);
+player.on('contextmenu', function(frame){
+  console.log('right clicked');
+  let dot = document.createElement("div");
+  dot.style.backgroundColor = 'blue';
+  dot.style.width = '10px';
+  dot.style.height = '10px';
+  dot.style.borderRadius = '100%';
+  dot.style.marginLeft = '-5px';
+  dot.style.marginTop = '-5px';
+  dot.style.position = 'absolute';
+  dot.style.left = player.getCursorX() + 'px';
+  dot.style.top = player.getCursorY() + 'px';
+  target.appendChild(dot);
+});
+
+player.play();
 ```
 
 ## API
 
-You can find [API Reference here](http://link-to-api.com). The documentation is generated via [documentationjs](https://github.com/documentationjs/documentation) so if there is something to fix/add do it inside the code not API file itself
+You can find [API Reference here](http://artf.github.io/cimice/docs). The documentation is generated via [documentationjs](https://github.com/documentationjs/documentation) so if there is something to fix/add do it inside the code not API file itself
+
+## Known issues & limitations
+
+- In Firefox, when you click 'play' button, for some reason, it will add the necessary iframe but immediately after will reload it, so you'll see nothing. One other click on 'play' should display iframe correctly
+- In Safari, 'play' won't work. Seems like there is an issue with writing inside iframe (working on this)
+- Dynamic contents (eg. via AJAX) are not supported.
 
 ## Why cimice?
 
-'Cimice' `/ˈtʃimitʃe/`, in italian, means literally a *bug*, but in this context supposed to be a *wiretap*
+Cimice `/ˈtʃimitʃe/`, in italian, means literally a *bug*, but in this context supposed to be a *wiretap*
 
 ## License
 

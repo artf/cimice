@@ -188,7 +188,7 @@ export default class Player extends Camera {
     let callback = this.onEvents[event] || this.abstractOnEvent;
     this.currentFrame = frame;
     this.emit('playing', frame);
-    this.emit(frame.eventType);
+    this.emit(frame.eventType, frame);
     callback(this, frame);
     if(nextFrame && this.isPlaying){
       let wait = nextFrame.ts - frame.ts;
