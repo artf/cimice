@@ -33,8 +33,15 @@ export default class Recorder extends Camera {
     this.eventHandlers = [];
     this.movie;
     this.isRecording = false;
-    // TODO
-    this.listeners = {};
+
+    // Basically events are binded to the target but unfortunately not all of them
+    // are easily bindable so there is a need to have a way to indicate custom listeners.
+    // At the moment I will let this property private
+    this.listeners = opts.listeners || {};
+
+    // Hard-coded listeners
+    if(this.target instanceof window.HTMLHtmlElement)
+      this.listeners = {'scroll': window, 'resize': window};
 
     /**
      * Fires when start recording

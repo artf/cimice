@@ -38,6 +38,10 @@ describe('Recorder', () => {
       expect(onEventSpy.callCount).to.equal(1);
     });
 
+    it('Returns correct listener', () => {
+      expect(recorder.getListener('scroll')).to.equal(window);
+    });
+
   });
 
   beforeEach(() => {
