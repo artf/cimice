@@ -55,19 +55,55 @@ rec.on('startRecording', () => {
   xhr.send(movieJson);
 });
 
-// Next listener sends last new recorded frames every 15 interactions (with default
-// events it's already pretty much high frequency) and remove them from the collection
+// Next listener sends last new recorded frames every 50 interactions (with default mousemove
+// event it's already pretty much high frequency) and remove them from the collection.
+// Anyway this logic is pretty much simple but ok as example, I suggest to build your own.
 rec.on('recording', () => {
-  let frames = rec.getMovie().getFrames();
+  let movie = rec.getMovie();
+  let frames = movie.getFrames();
   let framesJson = JSON.stringify(frames);
-  if(!(frames.length % 15)){
+  if(!(frames.length % 50)){
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://save/frames');
     xhr.send(framesJson);
+    movie.setFrames([]);
   }
-  frames = [];
 });
+
+rec.startRecording();
 ```
+
+### Playing
+
+```js
+// Here I supposed to have all recorded data inside fetched movie, but following the
+// second recording example you could probably have to fetch also frames data. So
+// you could have to do something like this:
+// let movieJSON = fetchMovie();
+// let framesJSON = fetchFrames(); // Should be an array of objects
+// movieJSON.frames = framesJSON;
+// let movie = new cimice.Movie(movieJSON);
+
+let movieJSON = fetchMovie();
+let movie = new cimice.Movie(movieJSON);
+var player = new cimice.Player({
+  target: document.getElementById('some-div')
+});
+player.setMovie(movie);
+player.play();
+```
+
+### Extend
+Cimice comes out of the box with few recordable events (click, mousemove, scroll and resize), but you can extend this behavior
+
+*Track right mouse click*
+```js
+contextmenu
+```
+
+## API
+
+You can find [API Reference here](http://link-to-api.com). The documentation is generated via [documentationjs](https://github.com/documentationjs/documentation) so if there is something to fix/add do it inside the code not API file itself
 
 ## Why cimice?
 
