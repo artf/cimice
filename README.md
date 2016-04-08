@@ -13,13 +13,38 @@ Cimice is an experimental user session recorder. The goal is to recreate, at lea
 * No dependencies
 * Easily extendible
 
+
 ## Installation
 
-All you need is `cimice.min.js` file inside `/dist` folder that you can get from the cloned repo `git clone https://github.com/artf/grapesjs.git` or download it directly from [here](https://raw.githubusercontent.com/artf/cimice/master/dist/cimice.min.js)
+All you need is `cimice.min.js` file inside `/dist` folder that you can get from the cloned repo via `git clone https://github.com/artf/grapesjs.git` / `npm install cimice` or download it directly from [here](https://raw.githubusercontent.com/artf/cimice/master/dist/cimice.min.js)
+
+
+## Development
+
+Clone the repository and enter inside the folder
+
+```sh
+$ npm install cimice
+$ cd cimice
+```
+
+Install all necessary dependencies
+
+```sh
+$ npm install
+```
+
+Start dev server
+
+```sh
+$ npm run dev
+```
+
 
 ## Usage
 
 Below you can see some of the real live examples on how to use Cimice for better fit your needs.
+
 
 ### Recording
 
@@ -80,6 +105,7 @@ rec.on('recording', () => {
 rec.startRecording();
 ```
 
+
 ### Playing
 
 ```js
@@ -99,6 +125,7 @@ let player = new cimice.Player({
 player.setMovie(movie);
 player.play();
 ```
+
 
 ### Extend
 Cimice comes out of the box with few recordable events (click, mousemove, scroll and resize), but you can extend this behavior.
@@ -140,9 +167,26 @@ player.on('contextmenu', function(frame){
 player.play();
 ```
 
+
 ## API
 
 You can find [API Reference here](http://artf.github.io/cimice/docs). The documentation is generated via [documentationjs](https://github.com/documentationjs/documentation) so if there is something to fix/add do it inside the code not API file itself
+
+
+## Testing
+
+Simple test run
+
+```sh
+$ npm test
+```
+
+Run and watch test
+
+```sh
+$ npm run test:dev
+```
+
 
 ## Cool cloud services
 
